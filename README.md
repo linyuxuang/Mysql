@@ -66,7 +66,7 @@ Mysql 常用函数
 		执行sql
 		 $resul=mysql_query($sql);
 		 //循环数据库 的数据
-		  while($rs=mysql_fetch_array($resul)){
+		  while($rs=mysql_fetch_array($resul,MYSQL_ASSOC)){
 			   echo $rs["uId"]."-->".$rs["uName"]."-->".$rs["uTel"]."<br/>";
 		  }
 
