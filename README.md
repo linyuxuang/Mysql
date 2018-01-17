@@ -72,10 +72,10 @@ Mysql 常用函数
 			   echo $rs["uId"]."-->".$rs["uName"]."-->".$rs["uTel"]."<br/>";
 		  }
 		  
-          查找数据库有几条数据         
-	  
-	  $count= mysql_num_rows($resul);
-          echo $count;     输出 2
+		  
+		  查找数据库有几条数据         
+		  $count= mysql_num_rows($resul);
+		  echo $count;     输出 2
 
 
 
