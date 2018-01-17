@@ -14,8 +14,9 @@ Mysql 常用函数
 	       
 	       4》mysql_query(); 向数据库发送一条sql命令 ，理解：执行sql。返回资源
 	
-	      5》 mysql_affected_rows() 取得前一条sql语句 返回受影响(修改过的哪一行) 的行数
-
+	      5》 mysql_affected_rows() 取得前一条sql语句 返回受影响(修改过的哪一行) 的行数   主要对 增(insert)，删(delete)，改(update) 有作用
+            
+	      6》 mysql_close()    关闭数据库连接
 
 
  例子
@@ -38,6 +39,9 @@ Mysql 常用函数
         删除语句
          $sql="delete from user where uId=2";
          mysql_query($sql);
+	 
+	 关闭数据库连接
+	   mysql_close($link)
 
 
 
