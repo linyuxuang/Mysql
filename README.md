@@ -24,6 +24,8 @@ Mysql 常用函数
 		MYSQL_ASSOC : 关联数组
 		MYSQL_NUM : 索引数组
 		MYSQL_BOTH : 混合数组 (默认)  
+		
+	     8》mysql_num_rows() 获取select语句执行后的结果集中的记录条数 (就是数据库有几条数据) 	
 
 
  例子; 增，删，改
@@ -65,11 +67,15 @@ Mysql 常用函数
 
 		执行sql
 		 $resul=mysql_query($sql);
-		 //循环数据库 的数据
+		 循环数据库 的数据
 		  while($rs=mysql_fetch_array($resul,MYSQL_ASSOC)){
 			   echo $rs["uId"]."-->".$rs["uName"]."-->".$rs["uTel"]."<br/>";
 		  }
-
+		  
+          查找数据库有几条数据         
+	  
+	  $count= mysql_num_rows($resul);
+          echo $count;     输出 2
 
 
 
