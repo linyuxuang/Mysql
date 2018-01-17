@@ -26,7 +26,7 @@ Mysql 常用函数
 		MYSQL_BOTH : 混合数组 (默认)  
 
 
- 例子
+ 例子; 增，删，改
  
  
        	header("content-type:text/html;charset=utf-8");
@@ -45,12 +45,31 @@ Mysql 常用函数
   
         删除语句
          $sql="delete from user where uId=2";
+	 
+	执行sql
          mysql_query($sql);
 	 
 	 关闭数据库连接
 	   mysql_close($link)
 
+例子：   查
 
+
+         header("content-type:text/html;charset=utf-8");
+	 $link=@mysql_connect("localhost","root","root") or die("连接数据库失败".mysql_error());  //连接成功   die()输出内容  终止后边程序 
+
+        mysql_select_db("pro",$link);
+     
+        查询语句        
+         $sql="select*from user";
+	 
+        执行sql
+         $resul=mysql_query($sql);
+         
+         //循环数据库 的数据
+          while($rs=mysql_fetch_array($resul)){
+          	   echo $rs["uId"]."-->".$rs["uName"]."-->".$rs["uTel"]."<br/>";
+          }
 
 
 
